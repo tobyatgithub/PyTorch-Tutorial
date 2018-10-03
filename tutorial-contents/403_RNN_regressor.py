@@ -53,7 +53,7 @@ class RNN(nn.Module):
         return torch.stack(outs, dim=1), h_state
 
         # instead, for simplicity, you can replace above codes by follows
-        # r_out = r_out.view(-1, 32)
+        # r_out = r_out.view(-1, 32) <- here shall be: r_out = r_out.view(1, -1, 32)
         # outs = self.out(r_out)
         # return outs, h_state
 
